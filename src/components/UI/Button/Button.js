@@ -1,9 +1,14 @@
 import styles from "./Button.module.css";
 
-const Button = ({...btnAttr}) => {
-  
+const Button = (props) => {
   return (
-    <button className={styles.button} {...btnAttr}>Add User</button>
+    <button
+      className={styles.button}
+      type={props.type || "button"}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
   );
 };
 
