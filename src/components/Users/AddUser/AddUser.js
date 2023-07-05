@@ -1,5 +1,6 @@
 import styles from "./AddUser.module.css";
-import Button from "../../Button/Button";
+import Button from "../../UI/Button/Button";
+import Card from "../../UI/Card/Card";
 
 const AddUser = (props) => {
   const addUserHandler = (e) => {
@@ -15,22 +16,20 @@ const AddUser = (props) => {
   };
 
   return (
-    <form onSubmit={addUserHandler}>
-      <div className={styles.input}>
-        <label htmlFor="username">User Name</label>
-        <input
-          name="username"
-          id="username"
-          type="text"
-          onInputChange={(val) => inputChangeHandler("name", val)}
-        />
-      </div>
-      <div className={styles.input}>
-        <label htmlFor="age">Age (Years)</label>
-        <input id="age" name="age" type="number" />
-      </div>
-      <Button type="submit" />
-    </form>
+    <Card className={styles.input}>
+      <form onSubmit={addUserHandler}>
+      <label htmlFor="username">User Name</label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            onChange={(val) => inputChangeHandler("name", val)}
+          />
+          <label htmlFor="age">Age (Years)</label>
+          <input id="age" name="age" type="number" />
+        <Button type="submit" />
+      </form>
+    </Card>
   );
 };
 
