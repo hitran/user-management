@@ -1,7 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import AddUser from "./components/Users/AddUser/AddUser";
-import UserList from './components/Users/UserList/UserList';
-
+import UserList from "./components/Users/UserList/UserList";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -10,11 +9,11 @@ function App() {
   };
 
   return (
-    <div>
-    <AddUser onAddUser={addUserHandler}/>
-    <UserList users={users}/>
-    </div>
+    <>
+      <AddUser onAddUser={addUserHandler} />
+      <UserList users={users} />
+    </>
   );
-};
+}
 
 export default App;
